@@ -1,9 +1,9 @@
-﻿namespace ImprovedSWCApp.Enums;
+﻿namespace ImprovedSWCApp.Models.Enums;
 
 public enum ProductType
 {
     Badge, 
-    Tshirt, 
+    Apparel, 
     Funko,
     Lego,
     Poster

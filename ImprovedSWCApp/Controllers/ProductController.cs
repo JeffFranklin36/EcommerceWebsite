@@ -1,4 +1,4 @@
-﻿using ImprovedSWCApp.Enums;
+﻿using ImprovedSWCApp.Models.Enums;
 using ImprovedSWCApp.Models;
 using Microsoft.AspNetCore.Mvc;
 

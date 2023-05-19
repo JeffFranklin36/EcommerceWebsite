@@ -124,7 +124,6 @@ const Store = () => {
             {filteredProducts.map((product) => (
                 <div key={product.id}>
                     <h2>{product.product}</h2>
-                    <p>Type: {product.type}</p>
                     <p>Description: {product.description}</p>
                     <p>Price: ${product.price}</p>
                     <button onClick={() => handleAddToCart(product)}>Add To Cart</button>
