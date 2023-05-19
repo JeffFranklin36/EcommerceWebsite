@@ -90,6 +90,29 @@ const Store = () => {
         }
     ];
 
+
+    function getAllProducts() {
+        fetch(`product/GetAll`)
+            .then((results) => {
+                return results.json();
+            })
+            .then(data => {
+                setProduct(data)
+            })
+    }
+
+    function getProductsByType() {
+        fetch(`product/GetByType/${productType}`)
+            .then((results) => {
+                return results.json();
+            })
+            .then(data => {
+                setProduct(data)
+            })
+    }
+
+    //Fetch from product controller and have store component loop over results.
+
     const [selectedType, setSelectedType] = useState('all');
     const [selectedProducts, setSelectedProducts] = useState([]);
 

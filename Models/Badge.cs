@@ -8,5 +8,5 @@ namespace ImprovedSWCApp.Models;
 
 internal class Badge
 {
-    public int BadgeID { get; set; }
+    public int BadgeId { get; set; }
 }

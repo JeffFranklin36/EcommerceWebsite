@@ -8,5 +8,5 @@ namespace ImprovedSWCApp.Models;
 
 public class OrderItem
 {
-    public int OrderItemID { get; set; }
+    public int OrderItemId { get; set; }
 }

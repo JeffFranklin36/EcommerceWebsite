@@ -1,40 +1,37 @@
 ﻿using ImprovedSWCApp.Models.Enums;
 using ImprovedSWCApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using ImprovedSWCApp.DataAccessLayerInterfaces;
 
 namespace ImprovedSWCApp.Controllers;
 
 
 [ApiController]
-[Route("[controller]")]
+//[Route("[controller]")]
+[Route("[controller]/[action]")]
 public class ProductController : ControllerBase
 {
     private readonly ILogger<ProductController> _logger;
+    private readonly IProductService _productService;
     private List<Product> _allProducts;
 
-    public ProductController(ILogger<ProductController> logger)
+    public ProductController(ILogger<ProductController> logger, IProductService productService)
     {
         _logger = logger;
+        _productService = productService;
         _allProducts = new List<Product>();
     }
 
-    [HttpGet]
-    public IEnumerable<Product> Get(ProductType productType)
+    [HttpGet("{productType}"), ActionName("GetByType")]
+    public async Task<IEnumerable<Product>> GetByType(ProductType productType)
     {
-        List<Product> desiredProducts = new List<Product>();
-        foreach (var item in _allProducts)
-        {
-            if (item.ProductType == productType)
-            {
-                desiredProducts.Add(item); 
-            }
-        }
-        return desiredProducts.ToArray();
+        return await _productService.GetProductsAsync(productType);
     }
 
-    [HttpGet]
-    public IEnumerable<Product> Get()
+    [HttpGet(""), ActionName("GetAll")]
+    public async Task<IEnumerable<Product>> GetAll()
     {
-        return _allProducts.ToArray();
+        var products = await _productService.GetProductsAsync();
+        return products.ToArray();
     }
 }
