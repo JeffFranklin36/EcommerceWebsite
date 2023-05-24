@@ -22,7 +22,7 @@ public class MockProductService : IProductService
     private async Task<List<Product>> GetTheProductsAsync()
     {
         List<Product> allProducts = new List<Product>();
-        Product newProduct = new Product() { Description = "General admission pass for all three days of Star Wars Celebration Japan", Id = 1, Name = "3-Day Pass", Price = 100, ProductType = ProductType.Badge, Quantity = 1000 };
+        Product newProduct = new Product() { Description = "General admission pass for all three days of Star Wars Celebration Japan", Id = 1, Name = "3-Day Pass", Price = 1000, ProductType = ProductType.Badge, Quantity = 1000 };
         allProducts.Add(newProduct);
         newProduct = new Product() { Description = "General admission pass for Friday of Star Wars Celebration Japan", Id = 2, Name = "Friday Pass", Price = 75, ProductType = ProductType.Badge, Quantity = 1000 };
         allProducts.Add(newProduct);

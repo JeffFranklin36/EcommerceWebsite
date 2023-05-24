@@ -1,15 +1,14 @@
-import Cart from "./components/Cart";
 import { Home } from "./components/Home";
-import Store from "./components/Store";
+import ProductsContainer from "./components/ProductsContainer";
 
 const AppRoutes = [
   {
     index: true,
     element: <Home />
   },
-  {
-    path: '/store',
-    element: <Store />
+    {
+        path: '/store',
+        element: <ProductsContainer productType={'All'} />
   }
 ];
 
